@@ -1,0 +1,5 @@
+homepage: "https://www.sovendus.de"
+documentation: "https://github.com/Sovendus-GmbH/sovendus_gtm_template"
+versions:
+  - sha: 9ae4ebc94ed8b487b97256b1428e22e45ca06e7b
+    changeNotes: Initial release.
