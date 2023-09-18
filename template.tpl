@@ -247,7 +247,15 @@ ___TEMPLATE_PARAMETERS___
     "displayName": "consumerEmail",
     "simpleValueType": true,
     "help": "This is used to pre-fill the input forms and also needed to filter for products that are not appropriate.",
-    "canBeEmptyString": false
+    "canBeEmptyString": true
+  },
+  {
+    "type": "TEXT",
+    "name": "emailHash",
+    "displayName": "emailHash",
+    "simpleValueType": true,
+    "help": "Instead of consumerEmail, you can also submit a md5 hashed email address instead. This is used to pre-fill the input forms and also needed to filter for products that are not appropriate.",
+    "canBeEmptyString": true
   },
   {
     "type": "TEXT",
@@ -262,7 +270,7 @@ ___TEMPLATE_PARAMETERS___
       }
     ],
     "help": "This is used to pre-fill the input forms. In case you cannot supply the street name and number seperately you can enter both values in here.",
-    "canBeEmptyString": false
+    "canBeEmptyString": true
   },
   {
     "type": "TEXT",
@@ -372,6 +380,7 @@ const consumerSalutationGTM = encode(makeString(data.consumerSalutation));
 const consumerFirstNameGTM = encode(makeString(data.consumerFirstName));
 const consumerLastNameGTM = encode(makeString(data.consumerLastName));
 const consumerEmailGTM = encode(makeString(data.consumerEmail));
+const emailHashGTM = encode(makeString(data.emailHash));
 const consumerStreetGTM = encode(makeString(data.consumerStreet));
 const consumerStreetNumberGTM = encode(makeString(data.consumerStreetNumber));
 const consumerCountryGTM = encode(makeString(data.consumerCountry));
@@ -404,6 +413,7 @@ const sovIframes = createQueue('sovIframes');
         consumerFirstName       : consumerFirstNameGTM,
         consumerLastName        : consumerLastNameGTM,
         consumerEmail           : consumerEmailGTM,
+        emailHash               : emailHashGTM,
         consumerStreet          : consumerStreetGTM,
         consumerStreetNumber    : consumerStreetNumberGTM,
         consumerCountry         : consumerCountryGTM,
@@ -981,6 +991,45 @@ ___WEB_PERMISSIONS___
                   {
                     "type": 1,
                     "string": "sovConsumer.consumerEmail"
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  }
+                ]
+              },
+              {
+                "type": 3,
+                "mapKey": [
+                  {
+                    "type": 1,
+                    "string": "key"
+                  },
+                  {
+                    "type": 1,
+                    "string": "read"
+                  },
+                  {
+                    "type": 1,
+                    "string": "write"
+                  },
+                  {
+                    "type": 1,
+                    "string": "execute"
+                  }
+                ],
+                "mapValue": [
+                  {
+                    "type": 1,
+                    "string": "sovConsumer.emailHash"
                   },
                   {
                     "type": 8,
