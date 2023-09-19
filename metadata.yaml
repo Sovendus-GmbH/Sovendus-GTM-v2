@@ -2,8 +2,10 @@ homepage: "https://www.sovendus.de"
 documentation: "https://github.com/Sovendus-GmbH/sovendus_gtm_template"
 versions:
   # Latest version
+  - sha: 4a45c65b0453f4b4af2afec99b659f5970788a4c
+    changeNotes: fix hashEmail, to add support for pre hashed email instead of transmitting it plain text
+  # older versions
   - sha: 9e4ca2bb4374e6d5b7952b39ad6502de1a02002e
     changeNotes: Add hashEmail, to add support for pre hashed email instead of transmitting it plain text
-  # older versions
   - sha: af991d3913a86e3677a39d86343c40c03933bafe
     changeNotes: Initial release.
