@@ -251,8 +251,8 @@ ___TEMPLATE_PARAMETERS___
   },
   {
     "type": "TEXT",
-    "name": "emailHash",
-    "displayName": "emailHash",
+    "name": "consumerEmailHash",
+    "displayName": "consumerEmailHash",
     "simpleValueType": true,
     "help": "Instead of consumerEmail, you can also submit a md5 hashed email address instead. This is used to pre-fill the input forms and also needed to filter for products that are not appropriate.",
     "canBeEmptyString": true
@@ -380,7 +380,7 @@ const consumerSalutationGTM = encode(makeString(data.consumerSalutation));
 const consumerFirstNameGTM = encode(makeString(data.consumerFirstName));
 const consumerLastNameGTM = encode(makeString(data.consumerLastName));
 const consumerEmailGTM = encode(makeString(data.consumerEmail));
-const emailHashGTM = encode(makeString(data.emailHash));
+const consumerEmailHashGTM = encode(makeString(data.consumerEmailHash));
 const consumerStreetGTM = encode(makeString(data.consumerStreet));
 const consumerStreetNumberGTM = encode(makeString(data.consumerStreetNumber));
 const consumerCountryGTM = encode(makeString(data.consumerCountry));
@@ -413,7 +413,7 @@ const sovIframes = createQueue('sovIframes');
         consumerFirstName       : consumerFirstNameGTM,
         consumerLastName        : consumerLastNameGTM,
         consumerEmail           : consumerEmailGTM,
-        emailHash               : emailHashGTM,
+        consumerEmailHash               : consumerEmailHashGTM,
         consumerStreet          : consumerStreetGTM,
         consumerStreetNumber    : consumerStreetNumberGTM,
         consumerCountry         : consumerCountryGTM,
@@ -1029,7 +1029,7 @@ ___WEB_PERMISSIONS___
                 "mapValue": [
                   {
                     "type": 1,
-                    "string": "sovConsumer.emailHash"
+                    "string": "sovConsumer.consumerEmailHash"
                   },
                   {
                     "type": 8,
