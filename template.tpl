@@ -403,7 +403,8 @@ const sovIframes = createQueue('sovIframes');
         orderValue              : orderValueGTM,
         orderCurrency           : orderCurrencyGTM,
         usedCouponCode          : usedCouponCodeGTM,
-        iframeContainerId       : iframeContainerIdGTM
+        iframeContainerId       : iframeContainerIdGTM,
+        integrationType         : "gtm-1.0.5"
     });
 
 
