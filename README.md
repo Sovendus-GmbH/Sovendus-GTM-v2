@@ -92,7 +92,7 @@ trigger fires on" section, select "Some Page Views" from the dropdown menu.
 - In the "Fire this trigger when" section, specify the conditions that will cause the trigger to fire. In
 this case, you will want to select "Page Path" from the dropdown menu and set the "contains"
 operator. Then, enter the URL of your thank-you page in the value field. For example, if your
-thank-you page is at "www.example.com/thank-you", you would enter "/thank-you" in the value field.
+thank-you page is at example.com/thank-you, you would enter /thank-you in the value field.
 - Click the "Save" button to create the trigger. Now, any Google Tag Manager tags that are associated
 with this trigger will fire on the thank-you page whenever the trigger conditions are met.
 
