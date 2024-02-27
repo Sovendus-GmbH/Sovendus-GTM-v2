@@ -1,5 +1,9 @@
 # Sovendus Google Tag Manager Template for Voucher Network and Checkout Benefits Integration
 
+> [!WARNING]
+> Note that GTM gets blocked by adblockers, we highly recommend you to use either a plugin or integrate us directly, as we/you will lose 5% - 10% of the traffic.
+
+
 This guide will show you how to set up and implement Sovendus on your website using GTM, providing an 
 alternative to directly integrating Sovendus into your website code. 
 ## Instructions:
