@@ -128,11 +128,13 @@ For Switzerland it is also required to complete the following steps.
 1. Go to tags and create a new tag
 2. Select Custom HTML as the Tag type
 3. Copy and paste the following code into the HTML text area:
-   ```javascript
-   var script = document.createElement("script");
-   script.type = "text/javascript";
-   script.async = true;
-   script.src = "https://api.sovendus.com/js/landing.js";
-   document.body.appendChild(script);
+   ```html
+   <script>
+     var script = document.createElement("script");
+     script.type = "text/javascript";
+     script.async = true;
+     script.src = "https://api.sovendus.com/js/landing.js";
+     document.body.appendChild(script);
+   </script>
    ```
 4. As a trigger add one that only triggers on the home page / the page where user will land coming from the Sovendus Voucher Network
