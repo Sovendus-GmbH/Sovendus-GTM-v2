@@ -17,7 +17,7 @@ alternative to directly integrating Sovendus into your website code.
 ### Step 1
 
 Log in to the GTM account for the site that you would like to implement Sovendus on.
-![GTM Home](https://raw.githubusercontent.com/Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild1.jpg)
+![GTM Home](https://raw.githubusercontent.com/Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild1.png)
 
 ### Step 2
 
@@ -32,8 +32,8 @@ the template called "Sovendus Integration for Voucher Network and Checkout Benef
 
 Click on the "Add to workspace" button to begin the installation process. Please follow any prompts that
 may appear during the installation process to complete the integration.
-![GTM Import Sovendus Template 2](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild4.jpg)
-![GTM Import Sovendus Template 3](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild5.jpg)
+![GTM Import Sovendus Template 2](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild4.png)
+![GTM Import Sovendus Template 3](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild5.png)
 
 ### Step 4
 
@@ -45,8 +45,8 @@ Be sure to carefully review the template and make any necessary changes before s
 your updates. It is important to note that any changes you make to the template will affect how Sovendus
 functions on your website, so be sure to thoroughly test your changes before publishing them.
 
-![GTM new tag](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild6.jpg)
-![GTM new tag - select Sovendus](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild7.jpg)
+![GTM new tag](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild6.png)
+![GTM new tag - select Sovendus](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild7.png)
 
 ### Step 5
 
@@ -118,7 +118,7 @@ custom HTML to your page.
 After making the changes to your shop, make sure the ID of the div container on your Thank-you page,
 aligns with the iframeContainerId in the Sovendus tag configuration.
 
-![GTM tag config](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild8.jpg)
+![GTM tag config](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild8.png)
 
 That's it! You should now have Sovendus properly integrated with GTM on your website.
 
