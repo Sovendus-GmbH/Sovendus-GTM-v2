@@ -1,0 +1,17 @@
+.github
+.vscode
+dist_tag
+node_modules/
+src
+.git
+.gitignore
+eslint.config.mjs
+metadata.yaml
+next-env.d.ts
+README-dev.md
+sov_build.config.ts
+sov_release.config.ts
+template.tpl
+tsconfig.json
+vitest.config.ts
+yarn.lock

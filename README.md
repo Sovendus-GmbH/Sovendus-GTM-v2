@@ -6,13 +6,13 @@
 This guide will show you how to set up and implement Sovendus on your website using GTM, providing an
 alternative to directly integrating Sovendus into your website code.
 
-## Instructions:
+## Instructions
 
 - Install the Sovendus plug-in on your website.
 - Edit the plug-in to add any desired parameters and define the trigger for it to appear.
 - Add a div container to your website where you want the Sovendus Offers to be displayed.
 
-## Here's how to do it:
+## Here's how to do it
 
 ### Step 1
 
@@ -72,7 +72,7 @@ These information are treated in accordance with the privacy policy and are not 
   server system. We also need this data when it comes to billing questions.
 - **orderValue**: The order value is for billing purposes, please submit it with two decimal places and a
   dot as the decimal separator.
-- **orderCurrency**: Order currency according to ISO 4217 (http://en.wikipedia.org/wiki/ISO_4217)
+- **orderCurrency**: Order currency according to ISO 4217 (<http://en.wikipedia.org/wiki/ISO_4217>)
 - **usedCouponCode**: The code of the redeemed voucher is used to track the success rate and enables
   automated invoicing.
 - **iframeContainerId**: This determines at which position on the page the generated iframe should be
@@ -84,7 +84,7 @@ These information are treated in accordance with the privacy policy and are not 
 - **consumerEmail**: The e-mail address is used to pre-fill input forms. It should be transmitted as plain
   text, Sovendus will hash the e-mail address to take possible objections to advertising into account.
 - **consumerCountry**: This data is used to display matching national offers. Please transmit country
-  code according to ISO 3166-1 alpha-2: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#DE
+  code according to ISO 3166-1 alpha-2: <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#DE>
 - **consumerZipcode**: This data is used to display local offers and is used to pre-fill input forms.
 
 ### Step 6
@@ -129,6 +129,7 @@ For Switzerland it is also required to complete the following steps.
 1. Go to tags and create a new tag
 2. Select Custom HTML as the Tag type
 3. Copy and paste the following code into the HTML text area:
+
    ```html
    <script>
      var script = document.createElement("script");
@@ -138,4 +139,5 @@ For Switzerland it is also required to complete the following steps.
      document.body.appendChild(script);
    </script>
    ```
+
 4. As a trigger add one that only triggers on the home page / the page where user will land coming from the Sovendus Voucher Network
