@@ -21,7 +21,6 @@
         "dev": "concurrently --names \"NEXT,NGROK\" --prefix-colors \"blue,green\" \"next dev\" \"ngrok http 3000 --log=stdout\"",
         "build": "sovendus-builder build",
         "lint": "eslint --fix",
-        "test": "vitest",
         "pub": "sovendus-release-tool"
     },
     "repository": {
@@ -72,7 +71,6 @@
         "sovendus-release-tool": "^1.4.2",
         "typescript": "^5.8.2",
         "typescript-eslint": "^8.29.0",
-        "vitest": "^3.1.1",
         "sovendus-integration-scripts": "^3.9.3"
     }
 }
