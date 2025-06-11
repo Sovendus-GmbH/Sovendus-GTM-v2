@@ -21,8 +21,9 @@ Log in to the GTM account for the site that you would like to implement Sovendus
 
 ### Step 2
 
-Go to the "Gallery" section of your GTM account. In the search field, type "Sovendus" and press enter. This
-will bring up a list of Sovendus templates available for use. You should see multiple templates, please select
+Go to the "Gallery" section of your GTM account. In the search field, type "Sovendus" and press enter.
+
+This will bring up a list of Sovendus templates available for use. You should see multiple templates, please select
 the template called "Sovendus Integration for Voucher Network and Checkout Benefits".
 
 ![GTM Import Sovendus Template](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild2.png)
@@ -38,11 +39,14 @@ may appear during the installation process to complete the integration.
 ### Step 4
 
 To edit the Sovendus template that you have installed, navigate to the "Tags" section of your GTM account.
+
 In this section, you will see a list of all the tags that have been set up for your website. Locate the Sovendus
 template in this list and click on it to edit.
 
 Be sure to carefully review the template and make any necessary changes before saving and publishing
-your updates. It is important to note that any changes you make to the template will affect how Sovendus
+your updates. 
+
+It is important to note that any changes you make to the template will affect how Sovendus
 functions on your website, so be sure to thoroughly test your changes before publishing them.
 
 ![GTM new tag](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild6.png)
@@ -101,7 +105,9 @@ To add a trigger for the thank-you page, please follow these steps:
   trigger fires on" section, select "Some Page Views" from the dropdown menu.
 - In the "Fire this trigger when" section, specify the conditions that will cause the trigger to fire. In
   this case, you will want to select "Page Path" from the dropdown menu and set the "contains"
-  operator. Then, enter the URL of your thank-you page in the value field. For example, if your
+  operator.
+
+  Then, enter the URL of your thank-you page in the value field. For example, if your
   thank-you page is at example.com/thank-you, you would enter /thank-you in the value field.
 - Click the "Save" button to create the trigger. Now, any Google Tag Manager tags that are associated
   with this trigger will fire on the thank-you page whenever the trigger conditions are met.
