@@ -111,10 +111,10 @@ This involves modifying the HTML of your Thank-you page by inserting the contain
 
 To create the div container via GTM, follow these steps:
 
-1\. Navigate to the **Tags** section of your GTM account.
-2\. Click the **New** button
-3\. Name the tag (e.g., **"Sovendus Container"**)
-4\. Click on **Tag Configuration**
+1\. Navigate to the **Tags** section of your GTM account.  
+2\. Click the **New** button  
+3\. Name the tag (e.g., **"Sovendus Container"**)  
+4\. Click on **Tag Configuration**  
 5\. In the sidebar, click the **search icon**, search for **Custom HTML** and select it
 
 ![GTM new tag](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild6.png)
@@ -147,8 +147,8 @@ If you **don’t already have** a trigger for your Thank-you page, follow these 
 ![GTM triggers tab](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild11.png)
 ![GTM new trigger](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild12.png)
 
-3\. Name your trigger (e.g., **"Thank-you Page Trigger"**)
-4\. Under **Trigger Configuration**, select **Page View**
+3\. Name your trigger (e.g., **"Thank-you Page Trigger"**)  
+4\. Under **Trigger Configuration**, select **Page View**  
 5\. Under **This trigger fires on**, select **Some Page Views**
 
 ![GTM new trigger](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild13.png)
@@ -200,8 +200,8 @@ Follow these steps to test your GTM integration:
 If you're operating in Switzerland, you must additionally:
 
 1\. Navigate to the **Tags** section of your Google tag manager account.
-d
-Now you click on the **New** button, name the tag to e.g. **Sovendus Swiss Container**, here you click on the **Tag Configuration** section, a side bar opens with all tag types you have available, here you click on the search icon and search for **Custom HTML**.
+
+2\. Now you click on the **New** button, name the tag to e.g. **Sovendus Swiss Container**, here you click on the **Tag Configuration** section, a side bar opens with all tag types you have available, here you click on the search icon and search for **Custom HTML**.
 
 Here you have to click on the **Custom HTML Tag**.
 
