@@ -51,8 +51,7 @@ functions on your website, so be sure to thoroughly test your changes before pub
 ### Step 5
 
 It is necessary to transmit certain information to Sovendus. For an extensive explanation of why and when
-certain information is transmitted to Sovendus, please refer to the Sovendus data protection documentati-
-on.
+certain information is transmitted to Sovendus, please refer to the Sovendus data protection documentation.
 
 The following variables are needed. Please check in your GTM data layer if they are already defined. If they
 are not, they should be added to the data layer.
@@ -63,7 +62,7 @@ These information are treated in accordance with the privacy policy and are not 
   find it at the very beginning of the document in the grey box.
 - **trafficMediumNumber**: The Traffic Medium Number is used to assign your integration in our
   system (for example, if you have multiple integrations within one shop). You can find it at the very
-  beginning of the document in the grey box
+  beginning of the document in the grey box.
 - **sessionID**: The customer's session ID is used to detect accidental duplicate requests. Please hash
   the session ID for security purposes before using it.
 - **Timestamp**: The timestamp is used to cause requests to our system to expire after a certain
@@ -72,7 +71,7 @@ These information are treated in accordance with the privacy policy and are not 
   server system. We also need this data when it comes to billing questions.
 - **orderValue**: The order value is for billing purposes, please submit it with two decimal places and a
   dot as the decimal separator.
-- **orderCurrency**: Order currency according to ISO 4217 (http://en.wikipedia.org/wiki/ISO_4217)
+- **orderCurrency**: Order currency according to ISO 4217 (http://en.wikipedia.org/wiki/ISO_4217).
 - **usedCouponCode**: The code of the redeemed voucher is used to track the success rate and enables
   automated invoicing.
 - **iframeContainerId**: This determines at which position on the page the generated iframe should be
@@ -84,17 +83,17 @@ These information are treated in accordance with the privacy policy and are not 
 - **consumerEmail**: The e-mail address is used to pre-fill input forms. It should be transmitted as plain
   text, Sovendus will hash the e-mail address to take possible objections to advertising into account.
 - **consumerCountry**: This data is used to display matching national offers. Please transmit country
-  code according to ISO 3166-1 alpha-2: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#DE
+  code according to ISO 3166-1 alpha-2: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#DE.
 - **consumerZipcode**: This data is used to display local offers and is used to pre-fill input forms.
 
 ### Step 6
 
-In the "Triggering" section, select the trigger that will cause the div container to be displayed on your
+In the "Trigger" section, select the trigger that will cause the div container to be displayed on your
 website e.g. on the Thank-you page of your checkout process.
 
 To add a trigger for the thank-you page, please follow these steps:
 
-- Click the "Triggers" tab in the left sidebar, then click the "New" button.
+- Click the "Trigger" tab in the left sidebar, then click the "New" button.
 - In the trigger configuration panel that appears, give your trigger a name that describes what it
   does, such as "Thank-You Page Trigger".
 - Under the "Trigger Configuration" section, select "Page View" as the trigger type. Under the "This
@@ -108,17 +107,41 @@ To add a trigger for the thank-you page, please follow these steps:
 
 ### Step 7
 
-To determine where the Sovendus banner will be displayed, you will need to define a div container with a
-unique ID. Add the div container directly to the Thank-you page:
+#### Choose your integration type
 
-This involves modifying the HTML code of your Thank-you page to include the div container. You can do
-this by editing the HTML code directly or by using a page builder or other tool that allows you to add
-custom HTML to your page.
+##### Option A: Inline Integration
 
-After making the changes to your shop, make sure the ID of the div container on your Thank-you page,
-aligns with the iframeContainerId in the Sovendus tag configuration.
+If you want to display Sovendus offers inline on your page (embedded within your content):
 
+1. Add a div container to your Thank-you page where you want the Sovendus offers to appear:
+
+   ```html
+   <div id="sovendus-container-1"></div>
+   ```
+
+2. Make sure the ID in your HTML (`sovendus-container-1` in this example) matches the `iframeContainerId` parameter in your Sovendus tag configuration.
 ![GTM tag config](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild8.png)
+
+##### Option B: Overlay/Sticky Banner
+
+For overlay or sticky banner implementations (floating over your content):
+
+1. For non-SPA websites (traditional websites without React, Vue, etc.): No div container is required - Sovendus will create its own container automatically.
+2. For SPA websites (React, Vue, Angular, etc.): You still need to add a div container as its existence will trigger the removal of overlays when navigating between pages.
+
+#### Creating a container via GTM
+
+If you can't modify your website's HTML directly:
+
+1. Create a new tag in GTM of type "Custom HTML"
+2. Add this code (adjust the ID if needed):
+
+   ```html
+   <div id="sovendus-container-1"></div>
+   ```
+
+3. Set this tag to trigger on the same page as your Sovendus tag
+4. Make sure this Custom HTML tag fires before your Sovendus tag (use tag sequencing if needed)
 
 That's it! You should now have Sovendus properly integrated with GTM on your website.
 
@@ -138,4 +161,4 @@ For Switzerland it is also required to complete the following steps.
      document.body.appendChild(script);
    </script>
    ```
-4. As a trigger add one that only triggers on the home page / the page where user will land coming from the Sovendus Voucher Network
+4. As a trigger add one that only triggers on the home page / the page where user will land coming from the Sovendus Voucher Network.
