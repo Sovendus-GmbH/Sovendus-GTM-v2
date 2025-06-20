@@ -5,13 +5,13 @@
 
 This guide explains how to set up and implement Sovendus on your website using Google Tag Manager, as an alternative to direct code integration.
 
-## Instructions:
+## 🛠️ Instructions:
 
 - Install the Sovendus Google Tag Manager (GTM) tag on your website.
 - Edit the tag to add required parameters and set the appropriate trigger.
 - Add a div container to the location on your site where Sovendus offers should appear.
 
-## Step-by-step Guide
+## 📋 Step-by-step Guide
 
 ### Step 1 – Log into Google Tag Manager
 
