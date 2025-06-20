@@ -6,13 +6,13 @@
 This guide will show you how to set up and implement Sovendus on your website using GTM, providing an
 alternative to directly integrating Sovendus into your website code.
 
-## Instructions:
+## 🛠️ Instructions:
 
 - Install the Sovendus plug-in on your website.
 - Edit the plug-in to add any desired parameters and define the trigger for it to appear.
 - Add a div container to your website where you want the Sovendus Offers to be displayed.
 
-## Here's how to do it:
+## 📋 Here's how to do it:
 
 ### Step 1
 
@@ -145,7 +145,7 @@ If you can't modify your website's HTML directly:
 
 That's it! You should now have Sovendus properly integrated with GTM on your website.
 
-## Additional steps for Switzerland
+## 🇨🇭 Additional steps for Switzerland
 
 For Switzerland it is also required to complete the following steps.
 
