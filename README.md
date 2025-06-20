@@ -28,7 +28,7 @@ Click on **Search Gallery**. In the search bar, type "Sovendus" and press Enter.
 ![GTM Import Sovendus Template](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild2.png)
 
 You will see multiple templates. Select the one called:
-**"Sovendus Integration for Voucher Network and Checkout Benefits"**
+"Sovendus Integration for Voucher Network and Checkout Benefits"
 
 ![GTM Import Sovendus Template](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild3.png)
 
