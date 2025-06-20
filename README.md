@@ -27,8 +27,7 @@ Click on **Search Gallery**. In the search bar, type "Sovendus" and press Enter.
 
 ![GTM Import Sovendus Template](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild2.png)
 
-You will see multiple templates. Select the one called:  
-**"Sovendus Integration for Voucher Network and Checkout Benefits"**
+You will see multiple templates. Select the one called: **"Sovendus Integration for Voucher Network and Checkout Benefits"**
 
 ![GTM Import Sovendus Template](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild3.png)
 
@@ -141,7 +140,7 @@ To create the div container via GTM, follow these steps:
 
 If you **don’t already have** a trigger for your Thank-you page, follow these steps (You can skip this steps if you already have a thank-you page trigger and go to the assign steps below):
 
-1\. Click on the **Triggers** tab in the left menu
+1\. Click on the **Triggers** tab in the left menu  
 2\. Click **New** to create a new trigger
 
 ![GTM triggers tab](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild11.png)
