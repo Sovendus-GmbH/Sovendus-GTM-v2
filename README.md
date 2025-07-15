@@ -223,6 +223,47 @@ This comprehensive guide explains how to set up and implement Sovendus on your w
 > - Ensure adequate spacing from other elements
 > - Consider mobile responsiveness
 
+#### 🏷️ Option B: GTM Custom HTML Tag
+
+> [!INFO]
+> **GTM Container Creation**
+> Create the container using Google Tag Manager's Custom HTML tag. This method is useful when you can't directly edit your thank-you page HTML.
+>
+>
+> **Create New Tag:**
+>
+> - Navigate to **Tags** section in GTM
+> - Click **New** button
+> - Name the tag (e.g., "Sovendus Container")
+>
+> **Configure Custom HTML:**
+>
+> - Click **Tag Configuration**
+> - Search for **Custom HTML** and select it
+>
+> ![GTM create custom html tag](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screens/14_div_tag_creation.png)
+>
+> **Add Container HTML:**
+>
+> - Paste the following HTML code into the **HTML** field
+>
+>    ```html
+>    <!-- Sovendus Container -->
+>    <div id="sovendus-container-1">
+>      <!-- the integration loads the content into this div element -->
+>    </div>
+>    ```
+>
+> ![GTM html code](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild18.png)
+>
+> 4. **Set Tag Sequencing:**
+>    - In **Tag Sequencing** section, click **Select a tag to fire before**
+>    - Search for and select your Sovendus tag
+>    - This ensures the container loads before the Sovendus content
+>
+> ![GTM html tag configuration](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild19.png)
+>
+> ![GTM html tag configuration select sequencing tag](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild20.png)
 
 ### Step 7 – Create and Set a Trigger
 
@@ -282,31 +323,113 @@ Follow these steps to test your GTM integration:
 3\. Now follow the steps in this guide:
 [Integration Testing Procedure](https://developer-hub.sovendus.com/Voucher-Network-Checkout-Benefits/Integration-Tester#integration-tester-installation)
 
-## Additional Step for Switzerland 🇨🇭
+## 🇨🇭 Additional Setup for Switzerland
 
-If you're operating in Switzerland, you must additionally:
+> [!WARNING]
+> **Switzerland-Specific Requirement**
+> If you're operating in Switzerland, you **must** add an additional landing page script to ensure proper compliance and attribution tracking.
+>
+> **Why is this required?**
+>
+> - Provides proper attribution tracking for Swiss traffic
+> - Required for all Swiss Sovendus integrations
+> - Ensures optimal performance of the Sovendus integration in Switzerland
 
-1\. Navigate to the **Tags** section of your Google tag manager account.
+### 🏔️ Swiss Landing Page Script Setup
 
-2\. Now you click on the **New** button, name the tag to e.g. **Sovendus Swiss Container**, here you click on the **Tag Configuration** section, a side bar opens with all tag types you have available, here you click on the search icon and search for **Custom HTML**.
+> [!EXAMPLE]
+> **Step-by-Step Implementation**
+> Follow these detailed steps to add the required Swiss landing page script to your GTM setup.
 
-Here you have to click on the **Custom HTML Tag**.
+> [!INFO]
+> **Step 1: Create New Custom HTML Tag**
+>
+> - Navigate to **Tags** section in GTM
+> - Click **New** button
+> - Name the tag "Sovendus Swiss Landing Script"
+> - Click **Tag Configuration**
+> - Search for and select **Custom HTML**
 
-![GTM new tag](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild6.png)
-![GTM create custom html tag](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild17.png)
+> [!INFO]
+> **Step 2: Add Swiss Landing Script Code**
+>
+> - Copy and paste this exact code into the HTML field:
+>
+>    ```html
+>    <script>
+>      var script = document.createElement("script");
+>      script.type = "text/javascript";
+>      script.async = true;
+>      script.src = "https://api.sovendus.com/js/landing.js";
+>      document.body.appendChild(script);
+>    </script>
+>    ```
+>
+> ![GTM swiss html code](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screens/15_switzerland_tag_top.png)
 
-3\. Copy and paste the following code into the HTML text area:
+### Step 3 - Configure Trigger Assignment
 
-```html
-<script>
-  var script = document.createElement("script");
-  script.type = "text/javascript";
-  script.async = true;
-  script.src = "https://api.sovendus.com/js/landing.js";
-  document.body.appendChild(script);
-</script>
-```
+> [!INFO]
+> **Configure Landing Page Trigger:**
+>
+> You have two options for configuring the landing page trigger based on your needs:
 
-![GTM swiss html code](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild24.png)
+#### 🌐 Option A - All Pages Trigger (Recommended)
+>
+> [!INFO]
+> **Universal Landing Page Setup**
+>
+> - This option fires the script on all pages of your website, which is the simplest and most reliable approach.
+>
+> ![GTM Switzerland All Pages Trigger](https://raw.githubusercontent.com/Sovendus-GmbH/Sovendus-GTM-v2/main/screens/16_switzerland_all_pages_trigger.png)
 
-4\. Assign a trigger that only fires on your **homepage or the landing page from Sovendus**. If you need to create a new trigger, just follow **Step 7**, but set your home page / the page where user will land coming from the Sovendus Voucher Network as the page path.
+> [!INFO]
+> **Configuration Steps:**
+>
+> - Create a new trigger using the process from Step 7
+> - Name it "Swiss Landing - All Pages"
+> - Under **Trigger Configuration**, select **Page View**
+> - Under **This trigger fires on**, select **All Page Views**
+> - Click **Save** to create the trigger
+>
+#### 🎯 Option B - Specific Campaign Pages Trigger
+
+> [!INFO]
+> **Targeted Landing Page Setup**
+> Use this option if you want to limit the script to specific landing pages or campaign pages only.
+>
+> ![GTM Switzerland Campaign Page Trigger](https://raw.githubusercontent.com/Sovendus-GmbH/Sovendus-GTM-v2/main/screens/17_switzerland_campaign_page_trigger.png)
+
+> [!INFO]
+> **Step 1: Create New Trigger**
+>
+> - Create a new trigger using the process from Step 7
+> - Name it "Swiss Landing - Campaign Pages"
+
+> [!INFO]
+> **Step 2: Configure Trigger Type**
+>
+> - Under **Trigger Configuration**, select **Page View**
+> - Under **This trigger fires on**, select **Some Page Views**
+
+> [!INFO]
+> **Step 3: Set Page Conditions**
+>
+> Set conditions for your specific pages:
+>
+> - **Page Path** contains `/campaign/`
+> - **Page Path** contains `/landing/`
+> - **Page Path** equals `/` (for homepage)
+
+> [!INFO]
+> **Step 4: Finalize Configuration**
+>
+> - Add multiple conditions as needed for your landing pages
+> - Click **Save** to create the trigger
+
+---
+
+> [!INFO]
+>
+> **📞 Need Support?**
+> Contact your Sovendus account manager if you encounter any issues or need assistance with the integration.
