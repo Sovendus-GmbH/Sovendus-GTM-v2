@@ -2,9 +2,11 @@ homepage: "https://www.sovendus.de"
 documentation: "https://github.com/Sovendus-GmbH/Sovendus-GTM-v2"
 versions:
   # Latest version
+  - sha: ce04762110e5cef160e58632060cba215e833f7e
+    changeNotes: Add hasConsent Parameter
+  # older versions
   - sha: 0a4634e76626d147cec2bae90ae74aa7fe019595
     changeNotes: Fix documentation url
-  # older versions
   - sha: 3f57395aea0c63aa569480315f145b415c2eda15
     changeNotes: Add version parameter
   - sha: 498db0dda4465e21320375e21d77cbb784a0175c
