@@ -1,33 +1,14 @@
-# Sovendus Google Tag Manager Template for Voucher Network and Checkout Benefits Integration
+## Google Tag Manager Integration - Voucher Network & Checkout Benefits
+
+##### This documentation helps you successfully integrate and configure Sovendus Voucher Network and/or Checkout Benefits on your website via Google Tag Manager, as an alternative to direct code integration.
 
 > [!WARNING]
 > **Ad Blocker Impact Warning**
 > Google Tag Manager is often blocked by ad blockers. We strongly recommend using a plugin or direct integration instead, as 5%–10% of traffic may be lost otherwise.
->
-> **Alternative Integration Methods:**
->
-> - [📱 Platform-specific plugins](https://developer-hub.sovendus.com/Voucher-Network-Checkout-Benefits/Web-Integration)
-> - [🔧 Direct code integration](https://developer-hub.sovendus.com/Voucher-Network-Checkout-Benefits/Web-Integration)
 
-## 🎯 Quick Overview
+### Implementation Guide
 
-This comprehensive guide explains how to set up and implement Sovendus on your website using Google Tag Manager, as an alternative to direct code integration.
-
-> [!INFO]
-> **What You'll Accomplish**
-> By following this guide, you'll successfully integrate Sovendus Voucher Network and/or Checkout Benefits into your website using Google Tag Manager.
->
-> **Integration Checklist:**
->
-> - [ ] Install the Sovendus GTM tag on your website
-> - [ ] Configure tag parameters and triggers
-> - [ ] Add div container for Sovendus offers display
-> - [ ] Test the integration thoroughly
-> - [ ] Deploy to production
-
-## 📋 Complete Step-by-Step Guide
-
-### Step 1 – 🚀 Access Google Tag Manager
+#### Step 1 – Access Google Tag Manager
 
 > [!INFO]
 > **Getting Started with GTM**
@@ -41,7 +22,7 @@ This comprehensive guide explains how to set up and implement Sovendus on your w
 > 2. Click **New** to add a new tag
 > 3. Give your tag a descriptive name (e.g., "Sovendus Integration")
 
-### Step 2 – 🔍 Find and Install the Sovendus Template
+#### Step 2 – Find and Install the Sovendus Template
 
 > [!EXAMPLE]
 > **Template Installation Process**
@@ -71,13 +52,13 @@ This comprehensive guide explains how to set up and implement Sovendus on your w
 >
 > ![GTM Import Sovendus template confirm](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screens/6_confirm_sovendus_template.png)
 
-### Step 3 – ⚙️ Configure Your Sovendus Tag
+#### Step 3 – Configure Traffic Numbers
 
 > [!INFO]
 > **Configuration Overview**
-> Configure your Sovendus tag with the traffic source and medium numbers provided by your account manager. Choose between single or multi-country setup based on your needs.
+> Configure your Sovendus Tag with the Traffic Source and Traffic Medium Numbers provided by your Account Manager/Customer Success Manager. Choose between single or multi-country setup based on your needs.
 
-#### 🌍 Option A: Single Country/Language Configuration
+##### Option A: Single Country/Language Configuration
 
 > [!EXAMPLE]
 > **Simple Setup for Single Market**
@@ -91,7 +72,7 @@ This comprehensive guide explains how to set up and implement Sovendus on your w
 > - [ ] Enter your **Traffic Medium Number** (provided by Sovendus)
 > - [ ] Verify the numbers match what you received from your account manager
 
-#### 🌐 Option B: Multi-Country/Language Configuration
+##### Option B: Multi-Country/Language Configuration
 
 > [!WARNING]
 > **Advanced Configuration Required**
@@ -133,7 +114,7 @@ This comprehensive guide explains how to set up and implement Sovendus on your w
 >    }
 >    ```
 
-### Step 4 – 🎯 Select Your Sovendus Products
+#### Step 4 – Select Your Sovendus Products
 
 > [!INFO]
 > **Product Selection Guide**
@@ -149,7 +130,27 @@ This comprehensive guide explains how to set up and implement Sovendus on your w
 > **📖 Need Parameter Details?**
 > Find comprehensive parameter documentation at [Sovendus Parameter Guide](https://developer-hub.sovendus.com/Voucher-Network-Checkout-Benefits/Parameter).
 
-### Step 5 – 📝 Configure Required Parameters
+#### Step 5 – Configure hasConsent Parameter
+
+> [!WARNING]
+> **Important!**
+> The `hasConsent` parameter is critical for GDPR and privacy compliance. This parameter allows the user's provided level of consent to easily be transferred to the Sovendus integration. Sovendus will then tailor functionality accordingly, as below
+
+| Scenario | Value | Description |
+|----------|-------------|---------|
+| ✔ Consent has been explicitly provided | `hasConsent` = `true` | The Sovendus integration loads successfully with full functionality, such as additional analytics, user recognition and personalisation of offers |
+| ✘ Consent has not been explicitly provided | `hasConsent` = `false` | The Sovendus integration loads successfully, but with minimal usage data (anonymised) |
+
+> [!INFO]
+> **Consent Variable in GTM:**
+> ![GTM hasConsent Parameter](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screens/GTM_ConsentParameter.png)
+> In most cases, a GTM variable will be the best way to handle this. The exact method to determine/set this variable will depend on your particular Consent Management Platform and processes, but please see the general variable creation process below:
+> - Navigate to the **Variables** section in GTM
+> - Create a boolean variable (if one does not already exist) to return a `true` or `false` value, depending on the user's provided level of consent
+> - This variable can pull from the Data Layer, a particular cookie value, or any other relevant value, depending on your Consent Management setup
+> - Once created, add this variable to the 'hasConsent Parameter' field within the Sovendus Template, as shown with the `CookieConsentBool` example variable above
+
+#### Step 6 – Configure Other Required Parameters
 
 > [!WARNING]
 > **Data Layer Requirements**
@@ -173,7 +174,7 @@ This comprehensive guide explains how to set up and implement Sovendus on your w
 >
 > ![GTM sovendus customer data parameters](https://raw.githubusercontent.com/Sovendus-GmbH/Sovendus-GTM-v2/main/screens/10_customer_data.png)
 
-### Step 6 – 📍 Create the Sovendus Display Container
+#### Step 7 – Create the Sovendus Display Container (if required)
 
 > [!WARNING]
 > **Container Placement**
@@ -190,13 +191,13 @@ This comprehensive guide explains how to set up and implement Sovendus on your w
 > **Container ID Must Match**
 > The div container ID must exactly match the **iframeContainerId** value in your Sovendus tag configuration. Mismatched IDs will prevent the integration from working.
 
-#### 🎯 Choose Your Container Setup Method
+##### Choose Your Container Setup Method
 
 > [!INFO]
 > **Container Placement Options**
 > You have two options for adding the Sovendus container to your thank-you page. Choose the method that best fits your technical setup.
 
-#### 🔧 Option A: Direct HTML Integration
+##### Option A: Direct HTML Integration
 
 > [!EXAMPLE]
 > **Manual HTML Implementation**
@@ -223,7 +224,7 @@ This comprehensive guide explains how to set up and implement Sovendus on your w
 > - Ensure adequate spacing from other elements
 > - Consider mobile responsiveness
 
-#### 🏷️ Option B: GTM Custom HTML Tag
+##### Option B: GTM Custom HTML Tag
 
 > [!INFO]
 > **GTM Container Creation**
@@ -265,7 +266,7 @@ This comprehensive guide explains how to set up and implement Sovendus on your w
 >
 > ![GTM html tag configuration select sequencing tag](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild20.png)
 
-### Step 7 – Create and Set a Trigger
+#### Step 8 – Create and Set a Trigger
 
 If you **don’t already have** a trigger for your Thank-you page, follow these steps (You can skip this steps if you already have a thank-you page trigger and go to the assign steps below):
 
@@ -306,7 +307,7 @@ After completing the steps above:
 
 You should now have successfully integrated Sovendus into your website using Google Tag Manager.
 
-## Test Your Integration Before Publishing
+### Test Your Integration Before Publishing
 
 Before publishing the changes you made in Google Tag Manager, you should test the integration to ensure that the Sovendus banner is correctly displayed on your Thank-you page.
 
@@ -323,7 +324,7 @@ Follow these steps to test your GTM integration:
 3\. Now follow the steps in this guide:
 [Integration Testing Procedure](https://developer-hub.sovendus.com/Voucher-Network-Checkout-Benefits/Integration-Tester#integration-tester-installation)
 
-## 🇨🇭 Additional Setup for Switzerland
+### Additional Setup for Switzerland
 
 > [!WARNING]
 > **Switzerland-Specific Requirement**
@@ -335,24 +336,22 @@ Follow these steps to test your GTM integration:
 > - Required for all Swiss Sovendus integrations
 > - Ensures optimal performance of the Sovendus integration in Switzerland
 
-### 🏔️ Swiss Landing Page Script Setup
+#### Swiss Landing Page Script Setup
 
-> [!EXAMPLE]
-> **Step-by-Step Implementation**
-> Follow these detailed steps to add the required Swiss landing page script to your GTM setup.
+##### Step 1: Create New Custom HTML Tag
 
 > [!INFO]
-> **Step 1: Create New Custom HTML Tag**
->
+> **Create New Custom HTML Tag**
 > - Navigate to **Tags** section in GTM
 > - Click **New** button
 > - Name the tag "Sovendus Swiss Landing Script"
 > - Click **Tag Configuration**
 > - Search for and select **Custom HTML**
 
+##### Step 2: Add Swiss Landing Script Code
+
 > [!INFO]
-> **Step 2: Add Swiss Landing Script Code**
->
+> **Add Swiss Landing Script Code**
 > - Copy and paste this exact code into the HTML field:
 >
 >    ```html
@@ -367,52 +366,38 @@ Follow these steps to test your GTM integration:
 >
 > ![GTM swiss html code](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screens/15_switzerland_tag_top.png)
 
-### Step 3 - Configure Trigger Assignment
+##### Step 3: Configure Trigger Assignment
+
+You have two options for configuring the landing page trigger based on your needs:
 
 > [!INFO]
-> **Configure Landing Page Trigger:**
->
-> You have two options for configuring the landing page trigger based on your needs:
-
-#### 🌐 Option A - All Pages Trigger (Recommended)
->
-> [!INFO]
-> **Universal Landing Page Setup**
->
-> - This option fires the script on all pages of your website, which is the simplest and most reliable approach.
+> **Option A - Universal Landing Page Setup/Trigger (Recommended)**
+> This option fires the script on all pages of your website, which is the simplest and most reliable approach.
 >
 > ![GTM Switzerland All Pages Trigger](https://raw.githubusercontent.com/Sovendus-GmbH/Sovendus-GTM-v2/main/screens/16_switzerland_all_pages_trigger.png)
-
-> [!INFO]
-> **Configuration Steps:**
 >
+> **Configuration Steps:**
 > - Create a new trigger using the process from Step 7
 > - Name it "Swiss Landing - All Pages"
 > - Under **Trigger Configuration**, select **Page View**
 > - Under **This trigger fires on**, select **All Page Views**
 > - Click **Save** to create the trigger
->
-#### 🎯 Option B - Specific Campaign Pages Trigger
 
 > [!INFO]
-> **Targeted Landing Page Setup**
+> **Option B - Specific/Targeted Campaign Pages Setup/Trigger**
 > Use this option if you want to limit the script to specific landing pages or campaign pages only.
 >
 > ![GTM Switzerland Campaign Page Trigger](https://raw.githubusercontent.com/Sovendus-GmbH/Sovendus-GTM-v2/main/screens/17_switzerland_campaign_page_trigger.png)
-
-> [!INFO]
-> **Step 1: Create New Trigger**
 >
+> **Step 1: Create New Trigger**
 > - Create a new trigger using the process from Step 7
 > - Name it "Swiss Landing - Campaign Pages"
-
-> [!INFO]
+>
 > **Step 2: Configure Trigger Type**
 >
 > - Under **Trigger Configuration**, select **Page View**
 > - Under **This trigger fires on**, select **Some Page Views**
-
-> [!INFO]
+>
 > **Step 3: Set Page Conditions**
 >
 > Set conditions for your specific pages:
@@ -420,8 +405,7 @@ Follow these steps to test your GTM integration:
 > - **Page Path** contains `/campaign/`
 > - **Page Path** contains `/landing/`
 > - **Page Path** equals `/` (for homepage)
-
-> [!INFO]
+>
 > **Step 4: Finalize Configuration**
 >
 > - Add multiple conditions as needed for your landing pages
