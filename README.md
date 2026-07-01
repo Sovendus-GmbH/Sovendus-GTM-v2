@@ -217,7 +217,7 @@ You have two options - as follows - for adding the Sovendus container to your th
 > - Use your CMS or page builder's custom HTML feature
 > - Add via your theme's template files
 >
-> - **HTML Code:**
+> **HTML Code:**
 >
 >    ```html
 >    <!-- Sovendus Container -->
@@ -237,7 +237,7 @@ You have two options - as follows - for adding the Sovendus container to your th
 > [!INFO]
 > **GTM Container Creation**
 > Create the container using Google Tag Manager's Custom HTML tag. This method is useful when you can't directly edit your thank-you page HTML.
-> However, simply adding the empty div container element is usually insufficient, as this doesn't allow for specific placement - as such, a querySelector or similar should be used (as below).
+> However, simply adding the empty div container element is usually insufficient, as this doesn't allow for specific placement - as such, a querySelector or similar should be used (as below). <br>
 >
 >
 > **Create New Tag:**
@@ -278,8 +278,7 @@ You have two options - as follows - for adding the Sovendus container to your th
 >    })();
 >    </script>
 >    ```
->    
-> [!WARNING]
+> 
 > **Points to consider**
 > - The display container may not appear (or may ‘pop in’ later) if the referenced element is not yet loaded
 > - It may also stop appearing if the site's content/structure is changed at a later date
@@ -323,7 +322,7 @@ with this trigger will fire on the thank-you page whenever the trigger condition
 > Instead of using the page path as a trigger, you could instead use a purchase event or similar. Depending on your site and setup, this can sometimes help to ensure reliable and fast firing of the Sovendus integration
 >
 
-#### Now assign this trigger to the relevant Sovendus Tag:
+#### Now assign this trigger to the relevant Sovendus Tag
 
 Now the trigger is created, you will need to assign it to the relevant Sovendus Tag:
 - If the Display Container Tag has been created within GTM (Step 7 - Option B, above), then only this Display Container Tag should have the firing trigger applied to it. As long as the process has been completed correctly, the Tag Sequencing will then ensure the Sovendus Integration (Template) Tag is fired afterwards. Adding the trigger to both Tags is not advised, as this can lead to double-firing issues
