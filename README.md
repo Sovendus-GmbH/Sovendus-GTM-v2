@@ -219,13 +219,9 @@ You have two options - as follows - for adding the Sovendus container to your th
 >
 > **HTML Code:**
 >
-> The following code snippet will add a blank div container. As long as the id matches what is specified within the Sovendus script/Tag, the Sovendus Inline/Embedded integration will load inside this container
+> The following code example will add a blank div container. As long as the id matches what is specified within the Sovendus script/Tag, the Sovendus Inline/Embedded integration will load inside this container:
 >
->    ```html
->    <div id="sovendus-container-1">
->    <!-- the integration loads the content into this div element -->
->    </div>
->    ```
+> ![GTM generic div container](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screens/generic_div_container.png)
 > 
 > **Placement Tips:**
 >
