@@ -219,12 +219,14 @@ You have two options - as follows - for adding the Sovendus container to your th
 >
 > **HTML Code:**
 >
-> ```html
-> <div id="sovendus-container-1">
-> <!-- the integration loads the content into this div element -->
-> </div>
-> ```
+> The following code snippet will add a blank div container. As long as the id matches what is specified within the Sovendus script/Tag, the Sovendus Inline/Embedded integration will load inside this container
 >
+>    ```html
+>    <div id="sovendus-container-1">
+>    <!-- the integration loads the content into this div element -->
+>    </div>
+>    ```
+> 
 > **Placement Tips:**
 >
 > - Position after order confirmation details
