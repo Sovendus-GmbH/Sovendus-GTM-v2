@@ -219,12 +219,12 @@ You have two options - as follows - for adding the Sovendus container to your th
 >
 > **HTML Code:**
 >
-> ```html
-> <!-- Sovendus Container -->
-> <div id="sovendus-container-1">
-> <!-- the integration loads the content into this div element -->
-> </div>
-> ```
+>    ```html
+>    !-- Sovendus Container -->
+>    <div id="sovendus-container-1">
+>    <!-- the integration loads the content into this div element -->
+>    </div>
+>    ```
 >
 > **Placement Tips:**
 >
@@ -238,8 +238,6 @@ You have two options - as follows - for adding the Sovendus container to your th
 > **GTM Container Creation**
 > Create the container using Google Tag Manager's Custom HTML tag. This method is useful when you can't directly edit your thank-you page HTML.
 > However, simply adding the empty div container element is usually insufficient, as this doesn't allow for specific placement - as such, a querySelector or similar should be used (as below)
->
-> **Create New Tag:**
 >
 > - Navigate to the 'Tags' section in GTM
 > - Click the 'New' button
