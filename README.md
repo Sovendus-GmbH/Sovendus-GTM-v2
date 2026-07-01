@@ -6,6 +6,14 @@
 > **Ad Blocker Impact Warning**
 > Google Tag Manager is often blocked by ad blockers. We strongly recommend using a plugin or direct integration instead, as 5%–10% of traffic may be lost otherwise.
 
+### Prerequisites
+
+If you are new to Google Tag Manager, please familiarise yourself with the official documentation before setting up the Sovendus integration:
+
+[**Data Layer**](https://developers.google.com/tag-platform/tag-manager/datalayer) | [**Variables**](https://support.google.com/tagmanager/answer/7683056) | [**Template Gallery**](https://support.google.com/tagmanager/answer/9454109?sjid=11666034763435679550-EU) | [**Triggers**](https://support.google.com/tagmanager/answer/7679316) | [***General Tag Manager Help***](https://support.google.com/tagmanager#topic=15191151)
+
+Additionally, we would be happy to provide an integration setup demo video, if required. Please reach out to your Customer Success Manager if you are interested in this.
+
 ### Implementation Guide
 
 #### Step 1 – Access Google Tag Manager
@@ -14,7 +22,7 @@
 > **Getting Started with GTM**
 > Log in to the GTM account for the site where you want to implement Sovendus.
 >
-> ![GTM Home](https://raw.githubusercontent.com/Sovendus-GmbH/Sovendus-GTM-v2/main/screens/1_create_tag.png)
+> ![GTM Home](https://raw.githubusercontent.com/Sovendus-GmbH/Sovendus-GTM-v2/main/screens/1_create_tag_RESIZED.png)
 >
 > **Quick Steps:**
 >
@@ -32,25 +40,25 @@
 >
 > - Click on **Tag Configuration** to open the tag type selector.
 >
-> ![GTM initial empty tag](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screens/2_initial_empty_tag.png)
+> ![GTM initial empty tag](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screens/2_initial_empty_tag_RESIZED.png)
 >
 > **Step 2.2: Access Template Gallery**
 >
 > - Click on **Discover more tag types...** to browse the community template gallery.
 >
-> ![GTM Import Sovendus Template](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screens/3_select_store.png)
+> ![GTM Import Sovendus Template](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screens/3_select_store_RESIZED.png)
 >
 > **Step 2.3: Search for Sovendus**
 >
 > - Search for **Sovendus** and select Sovendus Integration for Voucher Network and Checkout Benefits.
 >
-> ![GTM Import Sovendus Template 2](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screens/5_select_sovendus_template.png)
+> ![GTM Import Sovendus Template 2](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screens/5_select_sovendus_template_RESIZED.png)
 >
 > **Step 2.4: Confirm Installation**
 >
 > - Click **Choose template** to add it to your GTM container.
 >
-> ![GTM Import Sovendus template confirm](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screens/6_confirm_sovendus_template.png)
+> ![GTM Import Sovendus template confirm](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screens/6_confirm_sovendus_template_RESIZED.png)
 
 #### Step 3 – Configure Traffic Numbers
 
@@ -120,7 +128,7 @@
 > **Product Selection Guide**
 > Choose the Sovendus products you want to integrate. Each product requires different order and customer data parameters.
 >
-> ![GTM Sovendus product selector](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screens/13_sovendus_product_selector.png)
+> ![GTM Sovendus product selector](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screens/13_sovendus_product_selector_RESIZED.png)
 >
 > **Available Products:**
 >
@@ -147,7 +155,7 @@
 
 > [!INFO]
 > **Consent Variable in GTM:**
-> ![GTM hasConsent Parameter](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screens/GTM_ConsentParameter.png)
+> ![GTM hasConsent Parameter](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screens/GTM_ConsentParameter_RESIZED.png)
 > In most cases, a GTM variable will be the best way to handle this. The exact method to determine/set this variable will depend on your particular Consent Management Platform and processes, but please see the general variable creation process below:
 > - Navigate to the **Variables** section in GTM
 > - Create a boolean variable (if one does not already exist) to return a `true` or `false` value, depending on the user's provided level of consent
@@ -180,32 +188,28 @@
 
 #### Step 7 – Create the Sovendus Display Container (if required)
 
-> [!WARNING]
-> **Container Placement**
-> The position of this container doesn't affect the placement of the Sovendus sticky banner and overlay variants if you're using one.
-
 > [!INFO]
 > **When is the container required?**
 > The container is only required when one of the following is true for you:
 >
-> - you are using an **inline/embedded** version of our banner or product list
-> - you are using a **SPA** (single page app - e.g. react, angular, vue, etc.) as the existence of this container will trigger the sovendus overlay removal process
+> - You are using an **Inline/Embedded** version of our banner or product list
+> - You are using a **SPA** (single page app - e.g. react, angular, vue, etc.) as the existence of this container will trigger the sovendus overlay removal process
+>
+> If you are using a Sticky banner or an Overlay (without an SPA), then this container is ***not*** required
 
 > [!WARNING]
 > **Container ID Must Match**
-> The div container ID must exactly match the **iframeContainerId** value in your Sovendus tag configuration. Mismatched IDs will prevent the integration from working.
+> The display container's ID must exactly match the **iframeContainerId** value in your Sovendus tag configuration. Mismatched IDs will prevent the integration from working properly.
 
 ##### Choose Your Container Setup Method
 
-> [!INFO]
-> **Container Placement Options**
-> You have two options for adding the Sovendus container to your thank-you page. Choose the method that best fits your technical setup.
+You have two options - as follows - for adding the Sovendus container to your thank-you/confirmation page. Choose the method that best fits your technical setup.
 
 ##### Option A: Direct HTML Integration
 
 > [!EXAMPLE]
 > **Manual HTML Implementation**
-> Add the container directly to your thank-you page HTML. This method provides the most control over placement.
+> Add the container directly to your thank-you page HTML. This method is recommended wherever possible, as it provides the easiest control over placement.
 >
 > **Implementation Methods:**
 >
@@ -233,83 +237,100 @@
 > [!INFO]
 > **GTM Container Creation**
 > Create the container using Google Tag Manager's Custom HTML tag. This method is useful when you can't directly edit your thank-you page HTML.
+> However, simply adding the empty div container element is usually insufficient, as this doesn't allow for specific placement - as such, a querySelector or similar should be used (as below).
 >
 >
 > **Create New Tag:**
 >
-> - Navigate to **Tags** section in GTM
-> - Click **New** button
-> - Name the tag (e.g., "Sovendus Container")
+> - Navigate to the 'Tags' section in GTM
+> - Click the 'New' button
+> - Name the tag (e.g. "Sovendus Container")
 >
 > **Configure Custom HTML:**
 >
-> - Click **Tag Configuration**
-> - Search for **Custom HTML** and select it
+> - Click 'Tag Configuration'
+> - Search for 'Custom HTML' and select it
 >
-> ![GTM create custom html tag](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screens/14_div_tag_creation.png)
+> ![GTM create custom html tag](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screens/14_div_tag_creation_RESIZED.png)
 >
 > **Add Container HTML:**
 >
-> - Paste the following HTML code into the **HTML** field
+> - Into the 'HTML' field, paste the relevant code to allow you to create and place the div container into the correct location. Please note - the below is just an example, and your exact code may vary.
 >
 >    ```html
->    <!-- Sovendus Container -->
->    <div id="sovendus-container-1">
->      <!-- the integration loads the content into this div element -->
->    </div>
+>    <script>
+>    (function() {
+>    
+>    // Create the div element
+>    var div = document.createElement('div');
+>
+>    // Add the ID
+>    div.id = "sovendus-container-1";
+>
+>    // Get reference to a particular element on the page - this will be specific to your site
+>    var element = document.querySelector("#idToReference");
+>
+>    // Inject the new div directly after the referenced element
+>    if (element) {
+>      element.parentElement.insertBefore(div, element.nextSibling);
+>    }
+>    
+>    })();
+>    </script>
 >    ```
+>    
+> [!WARNING]
+> **Points to consider**
+> - The display container may not appear (or may ‘pop in’ later) if the referenced element is not yet loaded
+> - It may also stop appearing if the site's content/structure is changed at a later date
 >
-> ![GTM html code](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild18.png)
 >
-> 4. **Set Tag Sequencing:**
->    - In **Tag Sequencing** section, click **Select a tag to fire before**
->    - Search for and select your Sovendus tag
->    - This ensures the container loads before the Sovendus content
+> **Set Tag Sequencing:**
+>    - In the 'Tag Sequencing' section, select "Fire a tag after **Sovendus Container** fires"
+>    - In the 'Cleanup Tag' box, search for and select your Sovendus Template Tag
+>    - This ensures the container loads before the Sovendus content, which helps to avoid potential timing issues
 >
-> ![GTM html tag configuration](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild19.png)
->
-> ![GTM html tag configuration select sequencing tag](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild20.png)
+> ![GTM html tag configuration](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild19_UPDATED.png)
 
 #### Step 8 – Create and Set a Trigger
 
-If you **don’t already have** a trigger for your Thank-you page, follow these steps (You can skip this steps if you already have a thank-you page trigger and go to the assign steps below):
+If you **don’t already have** a trigger for your thank-you/confirmation page, follow these steps (you can skip these steps if you already have a thank-you page trigger and go to the assignment steps below):
 
-1\. Click on the **Triggers** tab in the left menu  
-2\. Click **New** to create a new trigger
+1\. Click on the 'Triggers' tab in the left menu  
+2\. Click 'New' to create a new trigger
 
-![GTM triggers tab](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild11.png)
-![GTM new trigger](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild12.png)
+![GTM triggers tab](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild11_RESIZED.png)
+![GTM new trigger](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild12_RESIZED.png)
 
-3\. Name your trigger (e.g., **"Thank-you Page Trigger"**)  
-4\. Under **Trigger Configuration**, select **Page View**  
-5\. Under **This trigger fires on**, select **Some Page Views**
+3\. Name your trigger (e.g. "Thank-you Page Trigger")  
+4\. Under 'Trigger Configuration', select 'Page View'  
+5\. Under 'This trigger fires on', select 'Some Page Views'
 
-![GTM new trigger](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild13.png)
+![GTM new trigger](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild13_RESIZED.png)
 
-6\. In the **Fire this trigger on** section, specify the conditions that will cause the trigger to fire. In this case, you will want to select **Page Path** from the dropdown menu and set the **contains** operator.
+6\. In the 'Fire this trigger on' section, specify the conditions that will cause the trigger to fire. In this case, you will want to select 'Page Path' from the dropdown menu and set the 'contains' operator
 
-Then, enter the **page path of your thank-you page** in the value field. For example, if your
-thank-you page is at example.com/thank-you, you would enter **/thank-you** in the value field.
+7\. Then, enter the page path of your thank-you page in the value field. For example, if your
+thank-you page is at "example.com/thank-you", you would enter "/thank-you" in the value field
 
 ![GTM trigger configuration](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild14.png)
 
-7\. Click **Save** to create the trigger. Now, any Google Tag Manager tags that are associated
-with this trigger will fire on the thank-you page whenever the trigger conditions are met.
+8\. Click 'Save' to create the trigger. Now, any Google Tag Manager tags that are associated
+with this trigger will fire on the thank-you page whenever the trigger conditions are met
 
-**Now assign this trigger to your HTML tag containing the Sovendus container:**
+> [!INFO]
+> **Alternative trigger options**
+> Instead of using the page path as a trigger, you could instead use a purchase event or similar. Depending on your site and setup, this can sometimes help to ensure reliable and fast firing of the Sovendus integration
+>
 
-![GTM html tag configuration select thank you page trigger](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild21.png)
-![GTM html tag configuration select thank you page trigger 2](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild22.png)
+#### Now assign this trigger to the relevant Sovendus Tag:
 
-**Final Check**
+Now the trigger is created, you will need to assign it to the relevant Sovendus Tag:
+- If the Display Container Tag has been created within GTM (Step 7 - Option B, above), then only this Display Container Tag should have the firing trigger applied to it. As long as the process has been completed correctly, the Tag Sequencing will then ensure the Sovendus Integration (Template) Tag is fired afterwards. Adding the trigger to both Tags is not advised, as this can lead to double-firing issues
+- If the Display Container Tag has ***not*** been created within GTM, then the Sovendus Integration (Template) Tag instead should have the firing trigger applied to it
 
-After completing the steps above:
-
-- Make sure the id of the **div container** on your Thank-you page **exactly matches** the **iframeContainerId** value in your Sovendus tag configuration.
-
-![GTM iframeContainerId](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild16.png)
-
-You should now have successfully integrated Sovendus into your website using Google Tag Manager.
+![GTM html tag configuration select thank you page trigger](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild21_UPDATED.png)
+![GTM html tag configuration select thank you page trigger 2](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild22_RESIZED.png)
 
 ### Test Your Integration Before Publishing
 
@@ -319,11 +340,11 @@ Follow these steps to test your GTM integration:
 
 1\. In your GTM account, click on **Preview**.
 
-![GTM preview](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild25.png)
+![GTM preview](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild25_RESIZED.png)
 
 2\. Enter your **store URL** and click **Connect**.
 
-![GTM preview connect url](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild26.png)
+![GTM preview connect url](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screenshots/Bild26_RESIZED.png)
 
 3\. Now follow the steps in this guide:
 [Integration Testing Procedure](https://developer-hub.sovendus.com/Voucher-Network-Checkout-Benefits/Integration-Tester#integration-tester-installation)
@@ -368,7 +389,7 @@ Follow these steps to test your GTM integration:
 >    </script>
 >    ```
 >
-> ![GTM swiss html code](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screens/15_switzerland_tag_top.png)
+> ![GTM swiss html code](https://raw.githubusercontent.com//Sovendus-GmbH/Sovendus-GTM-v2/main/screens/15_switzerland_tag_top_RESIZED.png)
 
 ##### Step 3: Configure Trigger Assignment
 
@@ -378,7 +399,7 @@ You have two options for configuring the landing page trigger based on your need
 > **Option A - Universal Landing Page Setup/Trigger (Recommended)**
 > This option fires the script on all pages of your website, which is the simplest and most reliable approach.
 >
-> ![GTM Switzerland All Pages Trigger](https://raw.githubusercontent.com/Sovendus-GmbH/Sovendus-GTM-v2/main/screens/16_switzerland_all_pages_trigger.png)
+> ![GTM Switzerland All Pages Trigger](https://raw.githubusercontent.com/Sovendus-GmbH/Sovendus-GTM-v2/main/screens/16_switzerland_all_pages_trigger_RESIZED.png)
 >
 > **Configuration Steps:**
 > - Create a new trigger using the process from Step 7
@@ -391,7 +412,7 @@ You have two options for configuring the landing page trigger based on your need
 > **Option B - Specific/Targeted Campaign Pages Setup/Trigger**
 > Use this option if you want to limit the script to specific landing pages or campaign pages only.
 >
-> ![GTM Switzerland Campaign Page Trigger](https://raw.githubusercontent.com/Sovendus-GmbH/Sovendus-GTM-v2/main/screens/17_switzerland_campaign_page_trigger.png)
+> ![GTM Switzerland Campaign Page Trigger](https://raw.githubusercontent.com/Sovendus-GmbH/Sovendus-GTM-v2/main/screens/17_switzerland_campaign_page_trigger_RESIZED.png)
 >
 > **Step 1: Create New Trigger**
 > - Create a new trigger using the process from Step 7
@@ -419,5 +440,5 @@ You have two options for configuring the landing page trigger based on your need
 
 > [!INFO]
 >
-> **📞 Need Support?**
-> Contact your Sovendus account manager if you encounter any issues or need assistance with the integration.
+> ** Need Support?**
+> Contact your Sovendus Customer Success Manager if you encounter any issues or need assistance with the integration.
