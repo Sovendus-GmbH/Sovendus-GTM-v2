@@ -219,11 +219,11 @@ You have two options - as follows - for adding the Sovendus container to your th
 >
 > **HTML Code:**
 >
->    ```html
->    <div id="sovendus-container-1">
->    <!-- the integration loads the content into this div element -->
->    </div>
->    ```
+> ```html
+> <div id="sovendus-container-1">
+> <!-- the integration loads the content into this div element -->
+> </div>
+> ```
 >
 > **Placement Tips:**
 >
