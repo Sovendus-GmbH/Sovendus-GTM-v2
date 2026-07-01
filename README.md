@@ -207,7 +207,7 @@ You have two options - as follows - for adding the Sovendus container to your th
 
 ##### Option A: Direct HTML Integration
 
-> [!EXAMPLE]
+> [!INFO]
 > **Manual HTML Implementation**
 > Add the container directly to your thank-you page HTML. This method is recommended wherever possible, as it provides the easiest control over placement.
 >
