@@ -157,22 +157,6 @@ ___TEMPLATE_PARAMETERS___
   },
   {
     "type": "TEXT",
-    "name": "timestamp",
-    "displayName": "timestamp",
-    "simpleValueType": true,
-    "canBeEmptyString": true,
-    "help": "The timestamp is used to deny requests after a certain time period. Please transfer the UNIX timestamp (seconds after the 1.1.1970).",
-    "enablingConditions": [
-      {
-        "paramName": "dropDownProduct",
-        "paramValue": "select",
-        "type": "NOT_EQUALS"
-      }
-    ],
-    "valueHint": "UNIX timestamp"
-  },
-  {
-    "type": "TEXT",
     "name": "orderId",
     "displayName": "orderId",
     "simpleValueType": true,
@@ -389,7 +373,6 @@ const trafficSourceNumberGTM = encode(makeString(data.trafficSourceNumber));
 const trafficMediumNumberGTM = encode(makeString(data.trafficMediumNumber));
 const hasConsentGTM = encode(makeString(data.hasConsent));
 const sessionIdGTM = encode(makeString(data.sessionId));
-const timestampGTM = encode(makeString(data.timestamp));
 const orderIdGTM = encode(makeString(data.orderId));
 const orderValueGTM = encode(makeString(data.orderValue));
 const orderCurrencyGTM = encode(makeString(data.orderCurrency));
@@ -419,7 +402,6 @@ const sovIframes = createQueue('sovIframes');
         trafficMediumNumber     : trafficMediumNumberGTM,
         hasConsent              : hasConsentGTM,
         sessionId               : sessionIdGTM,
-        timestamp               : timestampGTM,
         orderId                 : orderIdGTM,
         orderValue              : orderValueGTM,
         orderCurrency           : orderCurrencyGTM,
